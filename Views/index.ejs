@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Whatsapp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2 class="middle">All Chats!</h2>
+    <form method="GET" action="/chats/new">
+        <button class="btn btn-dark middle">New Chat</button>
+    </form>
+    <br><br>
+    <%for(let Chat of chats) {%>
+        <div class="chats">
+            <p>From: <i> <%= Chat.from %></i></p>
+            <div class="msg">
+                Message: <%= Chat.msg %>
+                <form method="GET" action="/chats/<%=Chat._id%>/edit"><br>
+                    <button class="btn btn-dark">Edit</button>
+                </form>
+                <form method="POST" action="/chats/<%=Chat._id%>/?_method=DELETE"><br>
+                    <button class="btn btn-dark" id="del">DELETE</button>
+                </form>
+            </div> <br>
+           <p> Recived: <i><%= Chat.to %></i> </p>
+           <hr>
+           <p><%= Chat.created_at.toString().split(" ")[4] %></p>
+           <p><%= Chat.created_at.toString().split(" ").slice(0,4).join("-") %></p>
+        </div>
+        <br>
+    <% } %>
+
+    <script src="/app.js"></script>
+</body> 
+</html>
+

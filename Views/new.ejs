@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new message</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>      
+    <form method="post" action="/chats">
+        <div class="container">
+            <h3 class="middle-1">Write a new message</h3> 
+            <input type="text" name="from" placeholder="who are you?" class="who"><br>
+            <textarea name="msg"  cols="40" rows="5" placeholder="Write your message here..." class="text"></textarea><br><br>
+            <input type="text" name="to" placeholder="Add reciver" class="add"><br><br>
+            <button class="btn btn-dark BT">Create New Chat</button> <br><br>
+        </div>
+    </form>
+</body>
+</html>
